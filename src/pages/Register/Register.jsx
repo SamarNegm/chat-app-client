@@ -16,7 +16,7 @@ function Register() {
     theme: "dark",
   };
   const [values, setValues] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -33,16 +33,16 @@ function Register() {
   };
 
   const handleValidation = () => {
-    const { password, confirmPassword, username, email } = values;
+    const { password, confirmPassword, name, email } = values;
     if (password !== confirmPassword) {
       toast.error(
         "Password and confirm password should be same.",
         toastOptions
       );
       return false;
-    } else if (username.length < 3) {
+    } else if (name.length < 3) {
       toast.error(
-        "Username should be greater than 3 characters.",
+        "name should be greater than 3 characters.",
         toastOptions
       );
       return false;
@@ -63,9 +63,9 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      const { email, username, password } = values;
+      const { email, name, password } = values;
       const { data } = await axios.post(registerRoute, {
-        username,
+        name,
         email,
         password,
       });
@@ -93,8 +93,8 @@ function Register() {
           </div>
           <input
             type="text"
-            placeholder="Username"
-            name="username"
+            placeholder="name"
+            name="name"
             onChange={(e) => handleChange(e)}
           />
           <input
