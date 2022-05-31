@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './pages/Register/Register';
+import Login from './pages/Login/Login';
+import Chat from './pages/Chat/Chat';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/chat" element={<Chat />} />
+
+
+          </Routes>
+        </Suspense>
+      </Router>
+
+
     </div>
   );
 }
