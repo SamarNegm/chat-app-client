@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Chat from './pages/Chat/Chat';
+import SetAvatar from './componants/SetAvatar/SetAvatar';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/setavatar" element={<SetAvatar />} />
+
 
 
 
