@@ -13,9 +13,11 @@ function App() {
       <Router>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Register />} />
+            <Route path="/" element={<Chat />} />
             <Route path="/login" element={<Login />} />
             <Route path="/chat" element={<Chat />} />
+            <Route path="/register" element={<Register />} />
+
 
 
           </Routes>

@@ -70,11 +70,14 @@ function Register() {
         password,
       });
 
-
+      console.log(data);
       if (data.status === false) {
+        console.log('yes false');
+
         toast.error(data.msg, toastOptions);
       }
       if (data.status === true) {
+        console.log('yes trueeee');
         localStorage.setItem(
           process.env.REACT_APP_LOCALHOST_KEY,
           JSON.stringify(data.user)
@@ -89,7 +92,7 @@ function Register() {
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>snappy</h1>
+            <h1>Talk Talk</h1>
           </div>
           <input
             type="text"

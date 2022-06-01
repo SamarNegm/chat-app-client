@@ -1,5 +1,5 @@
 export const host = "http://localhost:3000";
-export const loginRoute = `${host}/api/v1/users/login`;
+export const loginRoute = `${host}/api/v1/users/signin`;
 export const registerRoute = `${host}/api/v1/users/signup`;
 export const logoutRoute = `${host}/api/v1/users/logout`;
 export const allUsersRoute = `${host}/api/v1/users/allusers`;
